@@ -1,0 +1,283 @@
+/* load icon font from google */
+/* so you can use icons like special characters */
+/* @import statement MUST be before other CSS statement */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* reset default */
+* {
+  margin: 0;
+  padding: 0;
+/* redefine width to include padding and border, instead of only content area   */
+  box-sizing: border-box;
+}
+
+.header {
+  /* TODO make header occupy the whole row with display block */
+  display: block;
+  /* TODO make width 100% */
+  width: 100%;
+  /* TODO text align right   */
+  text-align: right;
+  /* rgba function for red/green/blue/transparency   */
+  background-color: rgba(0,0,0,0.8);  
+}
+
+/* IMPORTANT: multiple selector statements separated by comma */
+/* It is equivalent to have each separately with same {} body */
+/* hide checkbox and label */
+.header > input, 
+.header > label 
+{
+  /* TODO use display none to hide */
+  display: none;
+}
+
+.header > .nav {
+  /* TODO make navbar display inline-block */
+  display: inline-block;
+  /* TODO make width 100%   */
+  width: 100%;
+  /* TODO make padding 16px */
+  padding: 16px;
+}
+
+.header > .nav > .quick-access {
+  /* TODO make user-group links and quick-access links share with row using inline-block  */
+  display: inline-block;
+  /* TODO make quick-access width 30% */
+  width: 100%;
+  /* TODO text align left   */
+  text-align: center;
+}
+
+.header > .nav > .quick-access > li
+{
+  /* TODO make links side by side using inline-block */
+  display: inline-block;
+  /* TODO make left/right padding 4px */
+  padding: 0 30px;
+}
+
+.header > .nav > .quick-access > li > a
+{
+  /* TODO make all text color white */
+  color: white;
+  /* TODO set font type sans-serif */
+  font-family: garamond;
+  /* TODO set font size smaller 75% */
+  font-size: 100%;
+  /* TODO set texts to be uppercase */
+  text-transform: uppercase;
+  /* TODO remove underline */
+  text-decoration: none;
+}
+
+.header > .nav > .quick-access > li > a:hover{
+  color: rgb(255, 209, 26);
+  font-size: 105%;
+}
+
+/* add code for screen less than 700px */
+@media (max-width: 700px) {
+  
+  .header > #nav + label + .nav {
+    /* TODO hide the navbar when checkbox is unchekced, using display: none */
+    display: none;
+    /* TODO set width 320px and padding 16px   */
+    width: 320px;
+    padding: 16px;
+    
+    background-color: lightgrey;
+  }
+
+  /* the key here is the :checked selector which only select checkbox when it is checked */
+  .header > #nav:checked + label + .nav {
+    /* TODO show navbar when checkbox is checked, using display: block */
+    display: block;
+  }
+
+  /* use bottom border to implement the seperator line */
+  .header > .nav > .quick-access {
+    /* TODO user-group does not share row with anyone, using display: block   */
+    display: block;
+    /* TODO set its width 100%   */ 
+    width: 100%;
+    /* TODO align text on the center   */
+    text-align: center;
+    
+    /* use border as separator line */
+    border: 1px dotted grey;
+  /* only render bottom border by setting border-width: 0 for all other sides   */
+    border-width: 0 0 1px 0;
+  }
+
+  .header > .nav > .quick-access > li {
+    /* TODO place quick-acess links horizontally, using display: inline-block */
+    display: inline-block;
+    /* TODO add margin top/right/bottom/left with 0/4px/16px/4px */
+    margin: 0 4px 16px 4px;
+  }
+
+  /* TODO dropdown overlap other content. Use position   */
+  .header > .nav {
+    /* TODO position absolute */
+    position: absolute;
+    /* TODO top/right as 48px/0     */
+    top: 48px;
+    right: 0;
+    /* TODO z-index 100     */
+    z-index: 100;
+    /* TODO text align to left */
+    text-align: center;
+  }   
+
+  /* make label as icon   */
+  .header > label {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    padding: 16px;
+
+    color: white;
+  }
+
+  /* change text color to be black   */
+  .header > .nav > .quick-access > li > a
+  {
+    color: black;
+  }
+}
+/* load icon font from google */
+/* so you can use icons like special characters */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+/* reset defaults */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* complete CSS code based on TODO comments */
+
+.info > .info-box {
+  /* TODO each box share row with 50% width, 600px height */
+  display: inline-block;
+  width: 100%;
+  height: 600px;
+  /* TODO remove gap with -4px margin right   */
+  margin-right: -4px;
+  /* TODO padding 200px/32px/16px/16px   */
+  /* TODO vertical align top  */
+  vertical-align: top;
+  /* TODO set background image size auto 100% */
+  background-size: auto 100%;
+  /* TODO do not repeat background image   */
+  background-repeat: no-repeat;
+  /* TODO position background image in the center  */
+  background-position: center center;
+  /* TODO remove underline using text-decoration   */
+  text-decoration: none;
+  /* TODO position as relative since button position depends on it */
+  position: relative;
+  /* This will create animated effect, more details later  */
+  transition: background-size ease-in-out 1s;
+}
+
+.info > .info-box:hover {
+/* TODO make background image bigger when mouse hover over   */
+  background-size: auto 140%;
+/* This will create animated effect, more details later  */
+  transition: background-size ease-in-out 1s;
+}
+
+/* set text content to be white and vertically one after another */
+.info > .info-box > span{
+  color: rgb(255, 209, 26);
+}
+.info > .info-box > span,
+.info > .info-box > div
+{
+  /* TODO display block   */
+  display: block;
+  /* TODO margin 16px   */
+  margin: 16px;
+  /* TODO text color white   */
+  color: white;
+}
+
+/* make title text bigger */
+.info > .info-box > span:first-child {
+  /* TODO set font size 200%   */
+  font-size: 200%;
+  /* TODO use sans-serif font   */
+  font-family: sans-serif;
+  /* TODO make all uppercase   */
+  text-transform: uppercase;
+  color: rgb(255, 209, 26)
+}
+
+/* make detail text a little larger */
+.info > .info-box > span:nth-child(2) {
+  /* TODO font size 120%   */
+  font-size: 120%;
+  text-align: center;
+  padding: 25px;
+  border: 5px solid white;
+}
+
+
+
+/* make learn more look like a square button */
+.info > .info-box > .button {
+  /* TODO display inline block   */
+  display: inline-block;
+  /* TODO 32px padding */
+  padding: 32px;  
+  /* TODO create a 3px wide white border   */
+  border: 3px solid white;
+  /* TODO hide any overflow   */
+  overflow: hidden;
+  /* TODO set button text size 120%   */
+  font-size: 120%;
+  /* TODO set font as sans-serif   */
+  font-family: sans-serif;
+  /* TODO make font be bold   */
+  font-weight: bold;
+  /* TODO position absolute button from bottom 48px  */
+  position: absolute;
+  left: 750px;
+  bottom: 100px;
+}
+
+/* Adjust padding for button in second box */
+.info > .info-box:nth-child(2) > .button {
+  /* TODO padding 44px/10px  */
+  padding: 44px 10px;
+}
+
+/* set different background image and color for different infobox */
+.info > .info-box:nth-of-type(1) {
+  background-image: url("https://cdn.discordapp.com/attachments/992678907457310760/1052514591055286272/Slide1.PNG");
+    padding: 200px 32px 16px 16px;
+    height: 1500px;
+}
+.info > .info-box:nth-of-type(2) {
+  background-color: rgb(153, 102, 204);
+  padding: 50px 32px 16px 16px;
+}
+
+
+/* add code for screen less than 960px */
+@media (max-width: 960px) {
+  .info > .info-box {
+    /* TODO each box 100% width     */   
+    width: 100%;
+    /* TODO set background size 200% auto    */
+    background-size: 200% auto;
+  }
+  .info > .info-box:hover {
+    /* TODO set background size 220% auto    */
+    background-size: 220% auto;
+  }
+}
